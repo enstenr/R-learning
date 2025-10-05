@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## R Markdown
    
 ```{r}
-#`install once  
+#install only once  
 #install.packages("terra")
 
 library(terra)
