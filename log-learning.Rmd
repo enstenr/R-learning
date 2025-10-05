@@ -27,7 +27,7 @@ summary(values(flood_raster))
 
 hist(values(flood_raster), main="Simulated Flood Raster", 
      xlab="Pixel Values", col="skyblue", breaks=25)
- 
+
 # Apply log transformation
 log_raster <- log(flood_raster + 1)  # +1 to avoid log(0)
 
