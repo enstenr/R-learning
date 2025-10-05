@@ -34,6 +34,4 @@ log_raster <- log(flood_raster + 1)  # +1 to avoid log(0)
 # Histogram after log transform
 hist(values(log_raster), main="Log-Transformed Flood Raster", 
      xlab="Log(Pixel Values + 1)", col="orange", breaks="Sturges")
-
-
 ```
