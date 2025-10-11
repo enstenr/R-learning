@@ -44,3 +44,38 @@ IQR_val <- IQR((hp))
 96-1.5*IQR_val
 
 180 + 1.5*IQR_val
+
+
+```
+# stem plot 
+
+```{r}
+hist(hp,breaks = 30, col = "lightblue")
+
+
+```
+# Question 4
+The cars in the sample have either 3, 4 or 5 gears. Find the mean, median and mode of
+this variable
+
+
+```{r}
+
+gears <- mtcars$gear
+gears
+mean(gears)
+median(gears)
+table(gears)
+
+
+```
+#Question 5
+Compute the range of the variable weight? Hint: your answer should be a single number,
+i.e. the maximum - minimum.
+
+
+```{r}
+wt <- mtcars$wt
+max(wt)-min(wt)
+
+
