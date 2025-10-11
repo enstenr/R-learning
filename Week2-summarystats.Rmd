@@ -1,29 +1,46 @@
 ---
 title: "Week2-summarystats"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 date: "2025-10-11"
 ---
+# Question 1 
+1. Compute the mean, median, and standard deviation of the variable miles per gallon.
+Recall that the column of a dataframe can be extracted using $ i.e., mtcars$mpg
+```{r}
+mpg <- mtcars$mpg
+mpg
+mean(mpg)
+median(mpg)
+sd(mpg)
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 ```
+Construct a histogram of the horsepower of the vehicles in the dataset. Given the shape
+of your histogram, will the mean be greater than, less than or approximately equal to the
+median? Estimate the median from your graph, then verify your answer using R.
 
-## R Markdown
+```{r}
+hp <- mtcars$hp
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+hist(hp)
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+mean(hp)
 
-```{r cars}
-summary(cars)
 ```
+Mean is less than median as more values are concentrated at left of the histogram
 
-## Including Plots
+# Question2 
+Construct a boxplot and a stem and leaf plot of the horsepower. Compare the properties
+of these two graphs with the histogram constructed in the previous question. What is
+similar, and what is different?
 
-You can also embed plots, for example:
+```{r}
+boxplot(hp)
+quantile(hp, prob = c( 0.25, 0.5 , 0.75))
+IQR_val <- IQR((hp))
+1.5*IQR_val
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+96-1.5*IQR_val
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+180 + 1.5*IQR_val
